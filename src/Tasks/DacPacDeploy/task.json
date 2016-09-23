@@ -1,0 +1,54 @@
+{
+  "id": "15cf14f0-7fe5-11e6-8e9c-af0dc1a39c0e",
+  "name": "DacPacDeploy",
+  "friendlyName": "SQL Database Deployment",
+  "description": "Deploy SQL DB using DACPAC",
+  "author": "Gareth van der Berg (www.vanderberg.co.za)",
+  "helpMarkDown": "[More Information](https://github.com/gvanderberg/agent-tasks/src/Tasks/DacPacDeploy)",
+  "category": "Deploy",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "demands": [
+    "sqlpackage"
+  ],
+  "version": {
+    "Major": "0",
+    "Minor": "1",
+    "Patch": "6"
+  },
+  "minimumAgentVersion": "1.95.0",
+  "instanceNameFormat": "DacPac Schema Deploy $(dacpacName).dacpac",
+  "inputs": [
+    {
+      "name": "connectionString",
+      "type": "string",
+      "label": "ConnectionString",
+      "defaultValue": "Data Source=.\\SQLExpress;Initial Catalog=DatabaseName;Connection Timeout=60;Integrated Security=True;MultipleActiveResultSets=False",
+      "required": true,
+      "helpMarkDown": "The SQL Server Database ConnectionString"
+    },
+    {
+      "name": "dacpacName",
+      "type": "string",
+      "label": "DacPac Name",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Name of the dacpac (without .dacpac extension) to run the schema compare on."
+    },
+    {
+      "name": "dacpacPath",
+      "type": "filePath",
+      "label": "DacPac Path",
+      "defaultValue": "5v3wfr7ns6h63dxe6nxsgmpm7ofzh7dbjkrbhmmaawkoyjme6uuq",
+      "required": true,
+      "helpMarkDown": "Path to find the target dacpac (typically the artifact staging path where the dacpac will be uploaded from)."
+    }
+  ],
+  "execution": {
+    "PowerShell3": {
+      "target": "DacPacDeploy.ps1"
+    }
+  }
+}

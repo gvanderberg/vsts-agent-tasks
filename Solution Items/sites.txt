@@ -1,0 +1,8 @@
+http://donovanbrown.com/post/2015/10/05/how-do-i-upload-a-custom-task-for-build
+
+https://www.simple-talk.com/sql/database-delivery/writing-build-vnext-tasks-for-visual-studio-online/
+
+http://www.colinsalmcorner.com/post/developing-a-custom-build-vnext-task-part-1
+
+http://www.colinsalmcorner.com/post/developing-a-custom-build-vnext-task-part-2
+

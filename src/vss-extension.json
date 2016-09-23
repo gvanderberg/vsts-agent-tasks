@@ -1,0 +1,37 @@
+{
+    "manifestVersion": 1,
+    "id": "gareths-buildtasks",
+    "name": "Gareth's Build & Release Tools",
+    "version": "1.0.0",
+    "publisher": "garethvanderberg",
+    "public": true,
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "description": "Build extensions from Gareth to make life easier!",
+    "categories": [
+        "Build and release"
+    ],
+    "tags": [
+        "dacpac"
+    ],
+    "files": [
+        {
+            "path": "Tasks/DacPacDeploy"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "dacpac-deploy-task",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "Tasks/DacPacDeploy"
+            }
+        }
+    ]
+}
